@@ -49,8 +49,7 @@ $result = $req->getJsonStr();
 
 http_response_code($req->getStatusCode());
 header("Content-Type:application/json;charset=utf-8'");
-if (null !== $data->token) {
+if ($data->token !== null)
     header("token:" . $data->token);
-}
 
 echo ($result);
