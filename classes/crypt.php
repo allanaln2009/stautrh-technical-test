@@ -4,11 +4,11 @@ class Crypt{
   private static $key = "StrautRH";
 
   /*    
-	 * Public method that encript a password in a hash
+   * Public method that encript a password in a hash
    * @param $pass = String
    * @param $mail = optional String
-	 * @return string hash
-	 */
+   * @return string hash
+   */
   public static function encryptPass($pass, $mail = ''){
     $base = base64_encode(Crypt::$key.$mail);
     $hash = hash('sha512', base64_encode($base.$pass.md5($base)));
@@ -19,11 +19,11 @@ class Crypt{
   }
 
   /*    
-	 * Public method that generate a token
+   * Public method that generate a token
    * @param $key1 = String
    * @param $key1 = String
-	 * @return string token
-	 */
+   * @return string token
+   */
   public function genToken($key1, $key2){
     $key = date("D d/m/Y H:i:s");
     $base1 = str_replace(['+', '/', '='], ['-', '_', ''], base64_encode($key1));
