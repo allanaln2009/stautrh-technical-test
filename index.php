@@ -43,7 +43,7 @@ switch ($uri_path[0]) {
         break;
     default:
         $req = new Utils();
-        $req->setMsgCode(404, "The '$uri_path[0]' is a valid parameter.");
+        $req->setMsgCode(404, "The '$uri_path[0]' is not a valid parameter.");
 }
 $result = $req->getJsonStr();
 
